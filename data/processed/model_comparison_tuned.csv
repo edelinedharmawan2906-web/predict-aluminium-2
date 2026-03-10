@@ -1,0 +1,2 @@
+Model,MAPE Orig (%),MAPE Tuned (%),Delta,MAE Orig ($),MAE Tuned ($)
+ARIMA,3.89,3.9033296370874058,↑ 0.01%,102.29,102.57778662490735

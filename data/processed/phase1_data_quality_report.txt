@@ -1,0 +1,68 @@
+=================================================================
+LAPORAN KUALITAS DATA — FASE 1: PENGUMPULAN DATA
+Dibuat pada : 2026-03-06 15:30:12
+Periode data: 2017-01-01 s/d 2026-03-06
+=================================================================
+
+Total file CSV di data/raw/ : 11
+
+  [⚠ 306 NaN] aluminum_price_daily.csv
+           Baris: 2,319 | Kolom: 9 | Periode: 2017-01-03 s/d 2026-03-05
+           ⚠ volume: 306 missing (13.2%)
+
+  [✓ OK] aluminum_price_monthly_fred.csv
+           Baris: 109 | Kolom: 3 | Periode: 2017-01-01 s/d 2026-01-01
+
+  [⚠ 573 NaN] energy_prices_daily.csv
+           Baris: 2,391 | Kolom: 6 | Periode: 2017-01-02 s/d 2026-03-02
+           ⚠ natural_gas: 94 missing (3.9%)
+           ⚠ crude_oil_wti: 102 missing (4.3%)
+           ⚠ natural_gas_pct_change: 180 missing (7.5%)
+           ⚠ crude_oil_wti_pct_change: 197 missing (8.2%)
+
+  [⚠ 936 NaN] exchange_rates_daily.csv
+           Baris: 2,390 | Kolom: 8 | Periode: 2017-01-02 s/d 2026-02-27
+           ⚠ usd_cny: 105 missing (4.4%)
+           ⚠ usd_eur: 105 missing (4.4%)
+           ⚠ usd_jpy: 105 missing (4.4%)
+           ⚠ usd_cny_pct_change: 207 missing (8.7%)
+           ⚠ usd_eur_pct_change: 207 missing (8.7%)
+           ⚠ usd_jpy_pct_change: 207 missing (8.7%)
+
+  [⚠ 2 NaN] macro_indicators_monthly.csv
+           Baris: 109 | Kolom: 8 | Periode: 2017-01-01 s/d 2026-01-01
+           ⚠ us_construction_spending: 1 missing (0.9%)
+           ⚠ us_retail_sales: 1 missing (0.9%)
+
+  [✓ OK] macro_indicators_quarterly.csv
+           Baris: 36 | Kolom: 3 | Periode: 2017-01-01 s/d 2025-10-01
+
+  [✓ OK] macro_worldbank_annual.csv
+           Baris: 8 | Kolom: 5 | Periode: 2017-01-01 s/d 2024-01-01
+
+  [✗ ERROR] news_raw.csv: Missing column provided to 'parse_dates': 'date'
+
+  [✗ ERROR] pmi_china_manual.csv: Missing column provided to 'parse_dates': 'date'
+
+  [⚠ 244 NaN] pmi_data.csv
+           Baris: 111 | Kolom: 5 | Periode: 2017-01-01 s/d 2026-03-01
+           ⚠ pmi_manufacturing_usa: 11 missing (9.9%)
+           ⚠ pmi_manufacturing_china: 11 missing (9.9%)
+           ⚠ pmi_manufacturing_eu: 111 missing (100.0%)
+           ⚠ pmi_manufacturing_global: 111 missing (100.0%)
+
+  [✗ ERROR] pmi_usa_manual.csv: Missing column provided to 'parse_dates': 'date'
+
+-----------------------------------------------------------------
+RINGKASAN:
+  File berhasil dibuat    : 11
+  File tanpa missing      : 3
+  Total nilai missing     : 2,061
+
+LANGKAH SELANJUTNYA (Fase 2 - Preprocessing):
+  1. Isi template PMI manual dari sumber resmi
+  2. Jalankan src/preprocessing/01_cleaning.py
+  3. Lakukan imputasi missing values (forward-fill untuk weekend)
+  4. Resample semua data ke frekuensi harian
+  5. Merge semua dataset menjadi satu master DataFrame
+=================================================================

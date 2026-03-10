@@ -1,0 +1,27 @@
+# ============================================================
+# Proyek Prediksi Harga Aluminium - Requirements
+# Fase 1: Pengumpulan Data
+# ============================================================
+
+# Data Collection
+yfinance==0.2.38
+pandas-datareader==0.10.0
+fredapi==0.5.2
+requests==2.31.0
+beautifulsoup4==4.12.3
+selenium==4.18.1
+
+# Data Processing
+pandas==2.2.1
+numpy==1.26.4
+python-dotenv==1.0.1
+
+# NLP / Sentimen (digunakan Fase 2+)
+newsapi-python==0.2.7
+transformers==4.38.2
+torch==2.2.1
+
+# Logging & Utilities
+loguru==0.7.2
+tqdm==4.66.2
+schedule==1.2.1
